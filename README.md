@@ -34,31 +34,6 @@ The project is structured around a centralized Redux store using standard action
 
 ---
 
-## 📂 Project Structure
-
-```
-todo-app/
-├── src/
-│   ├── components/
-│   │   ├── TodoHeader.jsx   (Stats dashboard, progress bar, formatted date)
-│   │   ├── TodoInput.jsx    (Add task Dialog modal with priority and deadline selectors)
-│   │   ├── TodoList.jsx     (Search bar, filters, new task button, and empty lists placeholder)
-│   │   └── TodoItem.jsx     (Completion checkbox, inline editors, relative badges, delete actions)
-│   ├── redux/
-│   │   ├── actionTypes.js   (Action type constants)
-│   │   ├── todoActions.js   (Action creators)
-│   │   ├── todoReducer.js   (Action reducer handling state + localStorage hydration)
-│   │   └── store.js         (Redux store configurations + state subscriptions)
-│   ├── App.jsx              (Theme provider, full screen framework container, main layouts)
-│   ├── index.css            (Tailwind entries, google fonts, radial backdrops, scrollbar details)
-│   └── main.jsx             (Redux store provider bindings and DOM rendering)
-├── vite.config.js           (Vite + React + Tailwind configurations)
-├── package.json             (Project dependencies)
-└── README.md                (Project details and setup instructions)
-```
-
----
-
 ## 🚀 Setup & Run Instructions
 
 Follow these commands in your powershell terminal to set up and launch TaskFlow locally:
