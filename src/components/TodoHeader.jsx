@@ -48,7 +48,7 @@ export default function TodoHeader() {
           </Typography>
         </div>
 
-        <div className="flex flex-col gap-2 min-w-[200px] bg-slate-50 dark:bg-slate-955/40 p-4 rounded-xl border border-slate-200 dark:border-slate-800/80 transition-all duration-300">
+        <div className="flex flex-col gap-2 min-w-[200px] bg-slate-50 dark:bg-slate-900/40 p-4 rounded-xl border border-slate-200 dark:border-slate-800/80 transition-all duration-300">
           <div className="flex justify-between items-center text-xs font-semibold text-slate-600 dark:text-slate-300">
             <span>TASK COMPLETION</span>
             <span className="text-blue-600 dark:text-blue-400 font-bold">{completionPercentage}%</span>
@@ -74,12 +74,12 @@ export default function TodoHeader() {
 
       <Grid container spacing={3} className="mt-6 relative z-10">
         <Grid item xs={4}>
-          <div className="flex items-center gap-3 bg-slate-50 dark:bg-slate-955/30 border border-slate-200 dark:border-slate-850 p-3 md:p-4 rounded-xl hover:border-slate-350 dark:hover:border-slate-700/60 transition-colors">
+          <div className="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800 p-3 md:p-4 rounded-xl hover:border-slate-300 dark:hover:border-slate-700/60 transition-colors">
             <div className="p-2 bg-blue-500/10 rounded-lg text-blue-500 dark:text-blue-400 hidden sm:block">
               <AssignmentIcon />
             </div>
             <div>
-              <div className="text-xl md:text-2xl font-extrabold text-slate-850 dark:text-white">
+              <div className="text-xl md:text-2xl font-extrabold text-slate-800 dark:text-white">
                 {totalCount}
               </div>
               <div className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium">Total Tasks</div>
@@ -88,7 +88,7 @@ export default function TodoHeader() {
         </Grid>
 
         <Grid item xs={4}>
-          <div className="flex items-center gap-3 bg-slate-50 dark:bg-slate-955/30 border border-slate-200 dark:border-slate-850 p-3 md:p-4 rounded-xl hover:border-slate-350 dark:hover:border-slate-700/60 transition-colors">
+          <div className="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800 p-3 md:p-4 rounded-xl hover:border-slate-350 dark:hover:border-slate-700/60 transition-colors">
             <div className="p-2 bg-emerald-500/10 rounded-lg text-emerald-500 dark:text-emerald-400 hidden sm:block">
               <TaskAltIcon />
             </div>
@@ -102,7 +102,7 @@ export default function TodoHeader() {
         </Grid>
 
         <Grid item xs={4}>
-          <div className="flex items-center gap-3 bg-slate-50 dark:bg-slate-955/30 border border-slate-200 dark:border-slate-850 p-3 md:p-4 rounded-xl hover:border-slate-350 dark:hover:border-slate-700/60 transition-colors">
+          <div className="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800 p-3 md:p-4 rounded-xl hover:border-slate-350 dark:hover:border-slate-700/60 transition-colors">
             <div className="p-2 bg-amber-500/10 rounded-lg text-amber-500 dark:text-amber-400 hidden sm:block">
               <HourglassEmptyIcon />
             </div>

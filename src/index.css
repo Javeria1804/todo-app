@@ -3,10 +3,13 @@
 
 @import "tailwindcss";
 
+/* Tailwind CSS v4 class-based dark mode support directive */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --bg-color: #0b0f19; /* Deep custom dark slate */
-  --text-color: #f3f4f6; /* Tailwind slate-100 */
+  --bg-color: #0b0f19;
+  --text-color: #f3f4f6;
   --glow-1: rgba(59, 130, 246, 0.08);
   --glow-2: rgba(139, 92, 246, 0.08);
   --scrollbar-track: rgba(15, 23, 42, 0.6);
@@ -27,7 +30,6 @@ body {
     radial-gradient(at 100% 100%, var(--glow-2) 0px, transparent 50%);
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -42,9 +44,8 @@ body {
   background: rgba(148, 163, 184, 0.5);
 }
 
-/* Custom todo strikethrough */
 .todo-strikethrough {
   text-decoration: line-through;
-  text-decoration-color: #ef4444; /* High visibility red/coral strikethrough line */
+  text-decoration-color: #ef4444;
   text-decoration-thickness: 2px;
 }

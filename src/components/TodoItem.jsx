@@ -103,35 +103,35 @@ export default function TodoItem({ todo }) {
       if (completed) {
         return {
           text: `Due: ${dueDateStr}`,
-          className: 'text-slate-550 bg-slate-955/20 border-slate-900/30'
+          className: 'text-slate-500 bg-slate-900/20 border-slate-800/30'
         };
       }
       
       if (daysDiff < 0) {
         return {
           text: `Overdue (${Math.abs(daysDiff)}d ago)`,
-          className: 'text-red-450 bg-red-955/20 border border-red-500/30 animate-pulse font-semibold'
+          className: 'text-red-400 bg-red-950/20 border border-red-500/30 animate-pulse font-semibold'
         };
       } else if (daysDiff === 0) {
         return {
           text: 'Due Today',
-          className: 'text-amber-400 bg-amber-955/20 border border-amber-500/30 font-semibold'
+          className: 'text-amber-400 bg-amber-950/20 border border-amber-500/30 font-semibold'
         };
       } else if (daysDiff === 1) {
         return {
           text: 'Due Tomorrow',
-          className: 'text-blue-400 bg-blue-955/20 border border-blue-500/30'
+          className: 'text-blue-400 bg-blue-950/20 border border-blue-500/30'
         };
       } else {
         return {
           text: `Due: ${dueDateStr}`,
-          className: 'text-slate-400 bg-slate-955/20 border border-slate-800/40'
+          className: 'text-slate-400 bg-slate-900/20 border border-slate-800/40'
         };
       }
     } catch (e) {
       return {
         text: `Due: ${dueDateStr}`,
-        className: 'text-slate-400 bg-slate-955/20 border border-slate-800/40'
+        className: 'text-slate-400 bg-slate-900/20 border border-slate-800/40'
       };
     }
   };
@@ -219,7 +219,7 @@ export default function TodoItem({ todo }) {
                   onClick={handleToggle}
                   className={`break-words cursor-pointer select-none transition-all duration-300 font-semibold ${
                     todo.completed
-                      ? 'line-through text-slate-505 decoration-blue-500/60 decoration-2'
+                      ? 'line-through text-slate-500 decoration-blue-500/60 decoration-2'
                       : 'text-slate-200 hover:text-white'
                   }`}
                 >
@@ -239,7 +239,7 @@ export default function TodoItem({ todo }) {
               </div>
               
               {todo.createdAt && (
-                <span className="flex items-center gap-1 text-[10px] text-slate-550 mt-1 font-medium select-none">
+                <span className="flex items-center gap-1 text-[10px] text-slate-500 mt-1 font-medium select-none">
                   <AccessTimeIcon sx={{ fontSize: 12 }} />
                   Added at {formatTime(todo.createdAt)}
                 </span>
@@ -266,7 +266,7 @@ export default function TodoItem({ todo }) {
               <IconButton 
                 size="small" 
                 onClick={handleCancel} 
-                className="text-slate-400 hover:bg-slate-805"
+                className="text-slate-400 hover:bg-slate-800"
                 sx={{ color: '#9ca3af' }}
               >
                 <CloseIcon fontSize="small" />
