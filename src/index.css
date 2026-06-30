@@ -1,0 +1,50 @@
+/* Custom fonts and transitions for a premium dark mode experience */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --bg-color: #0b0f19; /* Deep custom dark slate */
+  --text-color: #f3f4f6; /* Tailwind slate-100 */
+  --glow-1: rgba(59, 130, 246, 0.08);
+  --glow-2: rgba(139, 92, 246, 0.08);
+  --scrollbar-track: rgba(15, 23, 42, 0.6);
+  --scrollbar-thumb: rgba(148, 163, 184, 0.3);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(at 0% 0%, var(--glow-1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, var(--glow-2) 0px, transparent 50%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+/* Custom todo strikethrough */
+.todo-strikethrough {
+  text-decoration: line-through;
+  text-decoration-color: #ef4444; /* High visibility red/coral strikethrough line */
+  text-decoration-thickness: 2px;
+}
