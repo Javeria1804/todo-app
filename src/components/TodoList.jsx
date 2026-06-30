@@ -15,17 +15,15 @@ import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 
 export default function TodoList({ onOpenAddModal }) {
   const todos = useSelector((state) => state.todos.todos);
-  const [filter, setFilter] = useState('all'); // 'all' | 'active' | 'completed'
+  const [filter, setFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const theme = useTheme();
   const isDark = theme.palette.mode === 'dark';
 
-  // Calculate live counts
   const totalCount = todos.length;
   const activeCount = todos.filter((todo) => !todo.completed).length;
   const completedCount = todos.filter((todo) => todo.completed).length;
 
-  // Filter tasks based on search text and active button
   const filteredTodos = todos.filter((todo) => {
     const matchesFilter =
       filter === 'all' ||
@@ -41,10 +39,8 @@ export default function TodoList({ onOpenAddModal }) {
 
   return (
     <div className="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 backdrop-blur-md shadow-lg dark:shadow-xl transition-all duration-300">
-      {/* Search and Filters Header */}
       <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-5 mb-6 pb-6 border-b border-slate-200 dark:border-slate-800/80">
         
-        {/* Unified Search Field & Add Task button group */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-1 max-w-lg">
           <TextField
             fullWidth
@@ -100,7 +96,6 @@ export default function TodoList({ onOpenAddModal }) {
           </Button>
         </div>
 
-        {/* MUI Styled Filter Buttons */}
         <div className="flex items-center gap-2 bg-slate-100 dark:bg-slate-950/60 p-1.5 rounded-xl border border-slate-200 dark:border-slate-800/80 self-start lg:self-auto transition-all duration-300">
           <Button
             onClick={() => setFilter('all')}
@@ -226,14 +221,12 @@ export default function TodoList({ onOpenAddModal }) {
         </div>
       </div>
 
-      {/* Todo items container */}
       <div className="space-y-3 max-h-[500px] overflow-y-auto pr-1">
         {filteredTodos.length > 0 ? (
           filteredTodos.map((todo) => (
             <TodoItem key={todo.id} todo={todo} />
           ))
         ) : (
-          /* Empty States */
           <div className="flex flex-col items-center justify-center py-16 px-4 text-center rounded-xl border border-dashed border-slate-200 dark:border-slate-800/60 bg-slate-50 dark:bg-slate-950/10">
             <div className="p-4 bg-slate-100 dark:bg-slate-900/60 rounded-2xl text-slate-400 dark:text-slate-500 mb-4 border border-slate-200 dark:border-slate-800">
               <FormatListBulletedIcon sx={{ fontSize: 32 }} />

@@ -24,7 +24,6 @@ export default function TodoItem({ todo }) {
   const editInputRef = useRef(null);
   const dispatch = useDispatch();
 
-  // Auto focus input when editing starts
   useEffect(() => {
     if (isEditing && editInputRef.current) {
       editInputRef.current.focus();
@@ -66,7 +65,6 @@ export default function TodoItem({ todo }) {
     }
   };
 
-  // Format creation time
   const formatTime = (isoString) => {
     if (!isoString) return '';
     try {
@@ -77,7 +75,6 @@ export default function TodoItem({ todo }) {
     }
   };
 
-  // Dynamic priority styling colors
   const getPriorityStyle = (priority) => {
     switch (priority) {
       case 'High':
@@ -91,7 +88,6 @@ export default function TodoItem({ todo }) {
     }
   };
 
-  // Calculate dynamic due date relative labels
   const getDueDateDisplay = (dueDateStr, completed) => {
     if (!dueDateStr) return null;
     
@@ -107,24 +103,24 @@ export default function TodoItem({ todo }) {
       if (completed) {
         return {
           text: `Due: ${dueDateStr}`,
-          className: 'text-slate-550 bg-slate-950/20 border-slate-900/30'
+          className: 'text-slate-550 bg-slate-955/20 border-slate-900/30'
         };
       }
       
       if (daysDiff < 0) {
         return {
           text: `Overdue (${Math.abs(daysDiff)}d ago)`,
-          className: 'text-red-450 bg-red-950/20 border border-red-500/30 animate-pulse font-semibold'
+          className: 'text-red-450 bg-red-955/20 border border-red-500/30 animate-pulse font-semibold'
         };
       } else if (daysDiff === 0) {
         return {
           text: 'Due Today',
-          className: 'text-amber-400 bg-amber-950/20 border border-amber-500/30 font-semibold'
+          className: 'text-amber-400 bg-amber-955/20 border border-amber-500/30 font-semibold'
         };
       } else if (daysDiff === 1) {
         return {
           text: 'Due Tomorrow',
-          className: 'text-blue-400 bg-blue-950/20 border border-blue-500/30'
+          className: 'text-blue-400 bg-blue-955/20 border border-blue-500/30'
         };
       } else {
         return {
@@ -151,7 +147,6 @@ export default function TodoItem({ todo }) {
       }`}
     >
       <div className="flex items-center gap-3 flex-1 min-w-0">
-        {/* MUI Checkbox */}
         <Checkbox
           checked={todo.completed}
           onChange={handleToggle}
@@ -165,7 +160,6 @@ export default function TodoItem({ todo }) {
           }}
         />
 
-        {/* Todo Content Area */}
         <div className="flex-1 min-w-0">
           {isEditing ? (
             <div className="flex flex-col gap-2 w-full">
@@ -191,7 +185,6 @@ export default function TodoItem({ todo }) {
                   },
                 }}
               />
-              {/* Inline selectors during edits */}
               <div className="flex items-center gap-3 flex-wrap">
                 <div className="flex items-center gap-1.5">
                   <span className="text-[10px] font-bold text-slate-400 uppercase select-none">Priority:</span>
@@ -226,19 +219,17 @@ export default function TodoItem({ todo }) {
                   onClick={handleToggle}
                   className={`break-words cursor-pointer select-none transition-all duration-300 font-semibold ${
                     todo.completed
-                      ? 'line-through text-slate-500 decoration-blue-500/60 decoration-2'
+                      ? 'line-through text-slate-505 decoration-blue-500/60 decoration-2'
                       : 'text-slate-200 hover:text-white'
                   }`}
                 >
                   {todo.text}
                 </Typography>
                 
-                {/* Priority Badge */}
                 <span className={`text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full select-none shrink-0 border ${getPriorityStyle(todo.priority)}`}>
                   {todo.priority || 'Medium'}
                 </span>
 
-                {/* Due Date Badge */}
                 {dueDateBadge && (
                   <span className={`text-[9px] font-semibold px-2 py-0.5 rounded-full select-none shrink-0 border flex items-center gap-1 ${dueDateBadge.className}`}>
                     <CalendarMonthIcon sx={{ fontSize: 10 }} />
@@ -258,7 +249,6 @@ export default function TodoItem({ todo }) {
         </div>
       </div>
 
-      {/* Action Buttons */}
       <div className="flex items-center gap-1.5 ml-4 shrink-0">
         {isEditing ? (
           <>

@@ -22,8 +22,8 @@ import CloseIcon from '@mui/icons-material/Close';
 
 export default function TodoInput({ open, onClose }) {
   const [inputText, setInputText] = useState('');
-  const [priority, setPriority] = useState('Medium'); // 'Low' | 'Medium' | 'High'
-  const [dueDate, setDueDate] = useState(''); // 'yyyy-mm-dd' or empty
+  const [priority, setPriority] = useState('Medium');
+  const [dueDate, setDueDate] = useState('');
   const [error, setError] = useState(false);
   const [helperText, setHelperText] = useState('');
   const dispatch = useDispatch();
@@ -48,14 +48,13 @@ export default function TodoInput({ open, onClose }) {
 
     dispatch(addTodo(trimmedText, priority, dueDate));
     
-    // Reset form states
     setInputText('');
     setPriority('Medium');
     setDueDate('');
     setError(false);
     setHelperText('');
     
-    onClose(); // Close the modal
+    onClose();
   };
 
   return (
@@ -88,7 +87,6 @@ export default function TodoInput({ open, onClose }) {
         <DialogContent dividers sx={{ borderColor: isDark ? 'rgba(51, 65, 85, 0.4)' : 'rgba(226, 232, 240, 0.8)' }}>
           <div className="flex flex-col gap-6 py-2">
             
-            {/* Task input field */}
             <TextField
               fullWidth
               variant="outlined"
@@ -140,7 +138,6 @@ export default function TodoInput({ open, onClose }) {
               }}
             />
 
-            {/* Priority Group */}
             <div className="flex flex-col gap-2">
               <Typography variant="body2" sx={{ fontWeight: '700', color: 'text.secondary', textTransform: 'uppercase', fontSize: '0.75rem', tracking: '1px' }}>
                 Priority Level
@@ -193,7 +190,6 @@ export default function TodoInput({ open, onClose }) {
               </ToggleButtonGroup>
             </div>
 
-            {/* Due date input */}
             <div className="flex flex-col gap-2">
               <Typography variant="body2" sx={{ fontWeight: '700', color: 'text.secondary', textTransform: 'uppercase', fontSize: '0.75rem', tracking: '1px' }}>
                 Due Date
