@@ -31,3 +31,4 @@ Developed by: Javeria
 - **Edit Task:** Hover over a task and click the edit icon to modify name, priority, or due date inline.
 - **Search & Filters:** Search for tasks by title and filter tasks by status (All, Active, Completed) using the control bar.
 - **Persisted State:** Task statuses, priorities, and deadlines automatically save and persist in local storage.
+
