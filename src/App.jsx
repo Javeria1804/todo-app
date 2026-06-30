@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import TodoHeader from './components/TodoHeader';
+import React from 'react';
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
 import { Target } from 'lucide-react';
@@ -11,9 +10,6 @@ const darkTheme = createTheme({
     mode: 'dark',
     primary: {
       main: '#3b82f6',
-    },
-    secondary: {
-      main: '#8b5cf6',
     },
     background: {
       default: '#0b0f19',
@@ -30,35 +26,29 @@ const darkTheme = createTheme({
 });
 
 function App() {
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
-
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <div className="dark">
-        <div className="min-h-screen py-8 px-4 sm:px-8 lg:px-12 flex flex-col items-stretch justify-start w-full">
-          <div className="w-full flex flex-col gap-6">
-            
-            <header className="flex items-center justify-between px-2 w-full mb-2">
-              <div className="flex items-center gap-2">
-                <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-600 to-violet-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20 animate-pulse">
-                  <Target className="h-5 w-5" />
-                </div>
-                <span className="font-bold text-xl text-slate-100 tracking-tight select-none">
-                  TaskFlow
-                </span>
-              </div>
-            </header>
+      <div className="dark min-h-screen py-6 px-4 md:px-8 w-full flex flex-col items-center">
+        <div className="w-full max-w-4xl flex flex-col gap-5">
+          
+          <header className="flex items-center justify-between py-2 border-b border-slate-900">
+            <div className="flex items-center gap-2">
+              <Target className="h-5 w-5 text-blue-500" />
+              <span className="font-extrabold text-lg text-slate-100 tracking-tight select-none">
+                TaskFlow
+              </span>
+            </div>
+            <span className="text-xs text-slate-500 font-medium">
+              Task Manager
+            </span>
+          </header>
 
-            <TodoHeader />
+          <main className="flex flex-col gap-4">
+            <TodoInput />
+            <TodoList />
+          </main>
 
-            <main className="w-full">
-              <TodoList onOpenAddModal={() => setIsAddModalOpen(true)} />
-            </main>
-
-            <TodoInput open={isAddModalOpen} onClose={() => setIsAddModalOpen(false)} />
-
-          </div>
         </div>
       </div>
     </ThemeProvider>
